@@ -1,0 +1,9 @@
+{
+  "packageName": "com.DefaultCompany.PaperShot",
+  "aab": "/home/giwan/Downloads/papershot-release.aab",
+  "track": "production",
+  "releaseNotes": {
+    "ko-KR": "첫 출시",
+    "en-US": "Initial release"
+  }
+}

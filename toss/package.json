@@ -1,0 +1,19 @@
+{
+  "name": "paper-shot",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare:webgl": "node scripts/prepare-webgl.mjs",
+    "dev": "vite --host 0.0.0.0",
+    "build": "npm run prepare:webgl && vite build",
+    "build:ait": "npm run build && ait build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@apps-in-toss/web-framework": "3.8.0"
+  },
+  "devDependencies": {
+    "vite": "8.3.4"
+  }
+}
