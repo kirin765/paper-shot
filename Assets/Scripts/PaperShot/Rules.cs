@@ -5,7 +5,9 @@ namespace PaperShot
     /// <summary>
     /// Memory-game rules: each round shows a random set of numbered circles,
     /// then hides the numbers and the player must shoot them back in order.
-    /// Higher rounds bring more circles (a longer order).
+    /// Difficulty rises one factor at a time — more circles, then a shorter
+    /// memory window and timer relative to that bigger order — so no round
+    /// ever spikes two pressures at once.
     /// </summary>
     public static class Rules
     {
@@ -30,11 +32,26 @@ namespace PaperShot
             }
         }
 
+        /// <summary>Minimum centre distance between circles, so layouts never crowd.</summary>
+        public static float TargetSpacing(float radius) => radius * 2f + 0.5f;
+
         /// <summary>How long the order numbers stay visible before hiding (memory window).</summary>
-        public static float OrderRevealSeconds(int round) => 0.6f + 0.35f * TargetsForRound(round);
+        public static float OrderRevealSeconds(int round)
+        {
+            // budget grows with the order so every circle gets a fair look.
+            return 0.9f + 0.55f * TargetsForRound(round);
+        }
 
-        public static float RoundSeconds(int round) => Mathf.Max(10f, 20f - (round - 1) * 0.5f);
+        /// <summary>Time allowed to shoot a round; eases down slowly, floors at 9s.</summary>
+        public static float RoundSeconds(int round) => Mathf.Max(9f, 18f - (round - 1) * 0.5f);
 
-        public static float WrongOrderPenalty => 1.0f;
+        /// <summary>Seconds removed for shooting the wrong circle out of order.</summary>
+        public static float WrongOrderPenalty => 1.5f;
+
+        /// <summary>Base world size of a bullet-hole decal (varied slightly per shot).</summary>
+        public const float DecalSize = 0.72f;
+
+        /// <summary>Extra world radius added to taps, so fingers don't have to be pixel-perfect.</summary>
+        public const float TouchPadding = 0.06f;
     }
 }

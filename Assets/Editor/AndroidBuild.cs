@@ -22,7 +22,7 @@ public static class AndroidBuild
 
     public static void Build()
     {
-        ApplyKoreanFontFallback();
+        // The game uses Unity TextMesh/IMGUI fonts; no TMP assets are needed.
         ApplyPlayerSettings();
         ApplySigning();
 
@@ -66,7 +66,7 @@ public static class AndroidBuild
     {
         Dictionary<string, string> props = new Dictionary<string, string>();
 
-        string file = Path.Combine(Directory.GetCurrentDirectory(), KeystoreProps);
+        string file = Path.Combine(Path.GetDirectoryName(Application.dataPath), KeystoreProps);
         if (File.Exists(file))
         {
             foreach (var raw in File.ReadAllLines(file))
@@ -92,10 +92,12 @@ public static class AndroidBuild
 
         if (string.IsNullOrEmpty(store) || string.IsNullOrEmpty(storePass))
         {
-            Debug.LogWarning("[AndroidBuild] keystore not configured (" + KeystoreProps
-                + " missing) — building with the debug keystore.");
-            return;
+            throw new InvalidOperationException("Release signing is not configured. "
+                + "Set " + KeystoreProps + " or PAPERSHOT_KEYSTORE_* variables.");
         }
+
+        if (!File.Exists(store))
+            throw new FileNotFoundException("Release keystore was not found.", store);
 
         PlayerSettings.Android.useCustomKeystore = true;
         PlayerSettings.Android.keystoreName = store;

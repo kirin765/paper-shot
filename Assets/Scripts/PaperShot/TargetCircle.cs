@@ -24,6 +24,7 @@ namespace PaperShot
         TextMesh label;
         Vector3 baseScale;
         float flash;
+        Color flashColor = Palette.Accent;
 
         public void RegisterHit() => Hits++;
 
@@ -31,20 +32,6 @@ namespace PaperShot
         {
             if (label != null && label.gameObject.activeSelf != visible)
                 label.gameObject.SetActive(visible);
-        }
-
-        static Font _font;
-        static Font DigitFont
-        {
-            get
-            {
-                if (_font == null)
-                {
-                    _font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-                    if (_font == null) _font = Resources.GetBuiltinResource<Font>("Arial.ttf");
-                }
-                return _font;
-            }
         }
 
         public void Setup(Vector2 pos, float radius)
@@ -66,9 +53,9 @@ namespace PaperShot
             labelGo.transform.SetParent(transform, false);
             labelGo.transform.localScale = Vector3.one;
             label = labelGo.AddComponent<TextMesh>();
-            label.font = DigitFont;
+            label.font = Fonts.Runtime;
             label.fontSize = 96;
-            label.characterSize = radius * 0.16f;
+            label.characterSize = radius * 0.20f; // keep digits legible on small screens
             label.anchor = TextAnchor.MiddleCenter;
             label.alignment = TextAlignment.Center;
             label.color = Palette.Ink;
@@ -83,12 +70,18 @@ namespace PaperShot
             if (flash <= 0f) return;
 
             flash = Mathf.Max(0f, flash - dt * 3.5f);
-            sr.color = Color.Lerp(Color.white, Palette.Accent, flash);
-            float s = 1f + 0.12f * Mathf.Sin(flash * Mathf.PI);
-            transform.localScale = baseScale * s;
+            sr.color = Color.Lerp(Color.white, flashColor, flash);
+            float pulse = SaveData.ReducedMotion ? 1f : 1f + 0.12f * Mathf.Sin(flash * Mathf.PI);
+            transform.localScale = baseScale * pulse;
         }
 
-        public void Flash() => flash = 1f;
+        public void Flash() => Flash(Palette.Accent);
+
+        public void Flash(Color color)
+        {
+            flashColor = color;
+            flash = 1f;
+        }
 
         public bool Contains(Vector2 world, float pad = 0f)
             => Vector2.Distance(world, Pos) <= Radius + pad;

@@ -12,6 +12,11 @@ Recordings/
 output/
 .utmp/
 
+# Unity filesystem-timestamp probe files (Temp/FSTimeGet-*, Temp/UnityLockfile).
+# Unity logs "currentFileSystemTime.ticks != 0" on btrfs about these; never commit.
+/Temp/
+Temp/FSTimeGet-*
+
 # Asset meta data (keep meta files, but ignore these)
 /[Aa]ssets/AssetStoreTools*
 /[Aa]ssets/Plugins/Editor/JetBrains*
@@ -69,3 +74,10 @@ android-keystore.properties
 
 # Node / Toss miniapp
 node_modules/
+
+# Generated store packages and Toss web output
+*.ait
+/toss/dist/
+/toss/public/
+/toss/index.html
+/toss/.granite/

@@ -1,0 +1,26 @@
+{
+  "packageName": "com.DefaultCompany.PaperShot",
+  "track": "production",
+  "releaseStatus": "draft",
+  "graphicsLanguage": "en-US",
+  "images": {
+    "icon": "/home/giwan/Projects/paper-shot/release/store-assets/icon.png",
+    "featureGraphic": "/home/giwan/Projects/paper-shot/release/store-assets/feature.png",
+    "phoneScreenshots": [
+      "/home/giwan/Projects/paper-shot/release/store-assets/itch-ready.png",
+      "/home/giwan/Projects/paper-shot/release/store-assets/itch-gameplay.png",
+      "/home/giwan/Projects/paper-shot/release/store-assets/itch-settings.png"
+    ]
+  },
+  "listings": {
+    "en-US": {
+      "title": "Paper Shot: Memory Game",
+      "shortDescription": "Remember the numbers, then tap the targets in order. Beat your best!",
+      "fullDescription": "Paper Shot is a quick memory challenge on a sheet of paper.\n\nWatch the numbered targets, remember their order, then tap them from 1 upward after the numbers disappear. Each round adds more targets, while wrong-order shots cost time.\n\n\u2022 A practice round teaches you how to play\n\u2022 Increasing challenges with up to six targets\n\u2022 Personal best score and round saved on your device\n\u2022 Adjustable music, sound, screen shake and reduced motion\n\u2022 No sign-in, ads or in-app purchases\n\nMusic: Sneaky Snitch by Kevin MacLeod (incompetech.com), licensed under Creative Commons Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)."
+    }
+  },
+  "releaseNotes": {
+    "en-US": "Initial release: numbered-target memory challenges, local personal bests, music and accessibility settings."
+  },
+  "aab": "/home/giwan/Projects/paper-shot/Builds/Android/PaperShot.aab"
+}

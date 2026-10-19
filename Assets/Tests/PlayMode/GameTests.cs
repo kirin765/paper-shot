@@ -135,6 +135,25 @@ namespace PaperShot.Tests
         }
 
         [Test]
+        public void Layout_IsClampedToNineBySixteen()
+        {
+            var cam = MakeCamera();
+            cam.aspect = 1.5f; // a wide viewport must still use a 9:16 play column
+            var game = PaperShotGame.Create(cam, 7, false);
+            game.StartNewGame();
+
+            Assert.AreEqual(PaperShotGame.DesignHalfHeight, cam.orthographicSize, 1e-4f);
+
+            float designHalfW = PaperShotGame.DesignHalfHeight * PaperShotGame.DesignAspect;
+            float expected = Mathf.Min(designHalfW - 0.4f, game.PlayHalfH * 0.72f);
+            Assert.AreEqual(expected, game.PlayHalfW, 1e-3f);
+            Assert.Less(game.PlayHalfW, cam.orthographicSize * 1.5f - 0.4f);
+
+            Object.DestroyImmediate(cam.gameObject);
+            Object.DestroyImmediate(game.gameObject);
+        }
+
+        [Test]
         public void Targets_DoNotOverlap()
         {
             var cam = MakeCamera();

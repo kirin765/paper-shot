@@ -1,0 +1,108 @@
+Loading Google Play Console
+notifications_unread
+Unread notifications
+Paper Shot: Memory Game
+keyboard_backspace
+All apps
+dashboard
+Dashboard
+bar_chart
+Statistics
+overview
+Publishing overview
+shield
+Protected with Play
+rocket_launch
+Test and release
+vital_signs
+Monitor and improve
+finance_mode
+Grow users
+sell
+Monetize with Play
+Publishing overview
+See an overview of the changes made to your app, and control when changes are sent for review or published. Show more
+sync_disabled
+Managed publishing off
+arrow_drop_down
+Submission activity
+arrow_right_alt
+info
+Geo-blocking regulation
+expand_less
+If you're distributing apps in the EU, see Geo-blocking Regulation (EU) 2018/302
+Learn more
+Dismiss
+Changes in review
+help
+Remove changes
+Hide
+expand_less
+Running quick checks for commonly found issues
+
+These checks help to find certain policy and app quality issues, so you can fix them before review. Changes will be sent for review as soon as checks complete successfully. Learn more
+
+Up to 14 minutes remaining
+
+Item changed
+Description
+rocket_launch
+Production
+1.0
+Start full rollout
+more_vert
+Countries / regions
+Add 177 countries / regions: Albania, Algeria, and 175 more
+more_vert
+Countries / regions
+Add rest of world
+more_vert
+play_prism
+Store listings
+English (United States) – en-US
+Default store listing
+Add language. Provided app name (Paper Shot: Memory Game), and all other required information.
+more_vert
+android_security_privacy_safe
+App content
+Content Rating
+Submit new questionnaire
+more_vert
+Target audience and content
+Update Target audience and content information. Target age is 13 and older.
+more_vert
+Privacy policy
+Set Privacy policy URL to https://gist.github.com/kirin765/325433caa3a451c6a32d49e5e2d43b63
+more_vert
+Ads declaration
+Update ads declaration
+more_vert
+Data safety
+Complete Data safety questionnaire
+more_vert
+Health apps
+Complete Health apps declaration
+more_vert
+settings
+Advanced settings
+Form factors
+Form factor Google Play Games on PC set to opted-in in Advanced settings
+more_vert
+play_prism
+Store settings
+App category
+Select app category (Puzzle game)
+more_vert
+What you've told us
+Items listed here aren't published, but we'll take them into account when reviewing your app:
+App content: Update Sign in details instructions (All functionality available without special access)
+App content: 'Advertising ID' declaration updated
+App content: 'Government apps' declaration updated
+App content: 'Financial features' declaration updated
+Product updates
+Status dashboard
+Help
+© 2026 Google
+Privacy
+Developer Distribution Agreement
+Terms of Service

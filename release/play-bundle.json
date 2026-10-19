@@ -1,0 +1,10 @@
+{
+  "packageName": "com.DefaultCompany.PaperShot",
+  "track": "production",
+  "releaseStatus": "draft",
+  "graphicsLanguage": "en-US",
+  "releaseNotes": {
+    "en-US": "Initial release: numbered-target memory challenges, local personal bests, music and accessibility settings."
+  },
+  "aab": "/home/giwan/Projects/paper-shot/Builds/Android/PaperShot.aab"
+}

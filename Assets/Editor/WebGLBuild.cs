@@ -14,7 +14,7 @@ public static class WebGLBuild
 {
     public static void Build()
     {
-        SetupKoreanFontFallback();
+        // The game uses Unity TextMesh/IMGUI fonts; no TMP assets are needed.
 
         string[] scenes = Array.ConvertAll(
             EditorBuildSettings.scenes,

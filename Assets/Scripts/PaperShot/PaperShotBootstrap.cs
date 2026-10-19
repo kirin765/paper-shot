@@ -25,7 +25,7 @@ namespace PaperShot
             cam.clearFlags = CameraClearFlags.SolidColor;
             cam.backgroundColor = Palette.PaperDark;
 
-            PaperShotGame.Create(cam, Random.Range(1, 999999), true);
+            PaperShotGame.Create(cam, Random.Range(1, 999999), true, !SaveData.TutorialDone);
         }
     }
 }

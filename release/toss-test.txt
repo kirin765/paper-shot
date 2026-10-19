@@ -1,0 +1,8 @@
+20261017-2 테스트하기
+QR 코드를 카메라로 찍고 앱으로 이동해 보세요
+intoss-private://paper-shot?_deploymentId=01a14a1e-b318-7a40-9b80-747122c14734&host=appsInTossHost
+테스트 푸시를 받을 멤버를 선택해 주세요
+토스 앱에 로그인된 만 19세 이상만 가능해요.
+김기완
+푸시 보내기
+닫기
